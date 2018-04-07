@@ -1,0 +1,29 @@
+ext {
+
+    //Version
+    supportVersion = '27.1.1'
+    socketVersion = '0.3.0'
+
+    //Packages
+    supportPackage = 'com.android.support'
+
+    //socket.io
+    socketPackage = 'com.github.nkzawa'
+
+    supportDependencies = [
+
+            design      : buildDependency(supportPackage, 'design', supportVersion),
+            recyclerView: buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+            cardView    : buildDependency(supportPackage, 'cardview-v7', supportVersion),
+            appCompat   : buildDependency(supportPackage, 'appcompat-v7', supportVersion)
+    ]
+
+    socketDependencies = [
+            socket : buildDependency(socketPackage, 'socket.io-client', socketVersion)
+    ]
+
+}
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}
